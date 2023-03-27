@@ -1,4 +1,4 @@
-# Vírus tipo Spyware: Keylogger
+# Spyware virus: Keylogger
 
 **_-Virus for the sole purpose of research and learning._**
 
